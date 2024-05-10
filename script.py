@@ -11,10 +11,13 @@ class Student:
 
 class Grade:
     minimum_passing = 65
+
     def __init__(self, score):
         self.score = score
     
-
+    def is_passing(self):
+        return self.score >= self.minimum_passing
+        
 
 
 # create 3 student instances
