@@ -22,3 +22,9 @@ roger = Student("Roger van der Weyden", 10)
 sandro = Student("Sandro Botticelli", 12)
 pieter = Student("Pieter Bruegel the Elder", 8)
 
+#add new grade for Pieter
+pieter_math_grade = Grade(100)
+pieter.add_grade(pieter_math_grade)
+
+
+
