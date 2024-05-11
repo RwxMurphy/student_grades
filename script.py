@@ -7,7 +7,17 @@ class Student:
     def add_grade(self, grade):
         if type(grade) is Grade:
             self.grades.append(grade)
-    
+
+    def get_average(self):
+        total_grade = 0
+        num_of_grades = len(self.grades)
+        
+        for grade in self.grades:
+            total_grade += grade
+
+        average = total_grade / num_of_grades
+        return average
+
 
 class Grade:
     minimum_passing = 65
