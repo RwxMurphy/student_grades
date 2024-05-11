@@ -3,6 +3,7 @@ class Student:
         self.name = name
         self.year = year
         self.grades = []
+        self.attendance = {}
     
     def add_grade(self, grade):
         if type(grade) is Grade:
@@ -17,6 +18,15 @@ class Student:
 
         average = total_grade / num_of_grades
         return average
+    
+    def get_attendance(self, student_attendance):
+        if type(student_attendance) is Attendance:
+            self.attendance[student_attendance.day] = student_attendance.is_present 
+        return self.attendance
+
+        
+    # Add an instance variable to Student that is a dictionary called .attendance, 
+    # with dates as keys and booleans as values that indicate whether the student attended school that day.
 
 
 class Grade:
@@ -29,6 +39,12 @@ class Grade:
         return self.score >= self.minimum_passing
         
 
+class Attendance:
+    def __init__(self, day, is_present):
+        self.day = day
+        self.is_present = is_present
+
+    
 
 # create 3 student instances
 roger = Student("Roger van der Weyden", 10)        
